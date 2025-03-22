@@ -13,9 +13,7 @@ export const Home = () => {
                         Hi, I'm Sanskar.
                     </h1>
                     <p className="text-gray-400 text-lg mb-8 max-w-lg mx-auto">
-                    I build scalable data pipelines and optimize real-time workflows
-                    using Azure, SQL, and Python. Always exploring new ways to make
-                    data faster, smarter, and more impactful.
+                    Always exploring new ways to make data faster, smarter, and more impactful.
                     </p>
                     <div className="flex justify-center space-x-4">
                         <a 
