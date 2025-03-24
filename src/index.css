@@ -1,19 +1,91 @@
 @import "tailwindcss";
 
-html, body {
+:root {
+  --white-color: #fcf0f0;
+  --black-color: #343434;
+  --primary-color: #ff554d;
+  --yellow-color: #ffc74d;
+  --green-color: #43bf75;
+  --blue-color: #246b91;
+}
+
+html,
+body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: #0a0a0a;
-  color: #f3f4f6;
+  background: var(--white-color);
+  color: var(--black-color);
 }
 
+.my-bg-primary {
+  background-color: var(--primary-color);
+}
 
+.my-bg-primary\/10 {
+  background-color: #ff564d28;
+}
+
+.my-bg-black {
+  background-color: var(--black-color);
+}
+
+.my-bg-white {
+  background-color: var(--white-color);
+}
+
+.my-text-black {
+  color: var(--black-color);
+}
+
+.my-text-white {
+  color: var(--white-color);
+}
+
+.my-text-primary {
+  color: var(--primary-color);
+}
+
+.my-border-black {
+  border-color: var(--black-color);
+}
+
+.my-border-primary,
+.focus\:my-border-primary:focus {
+  border-color: var(--primary-color);
+}
+
+h1 {
+  letter-spacing: 0.2rem;
+  font-size: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1 {
+    letter-spacing: 0.5rem;
+    font-size: 3rem;
+  }
+}
+
+.piechart {
+  /* width: 150px;
+  height: 150px; */
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--primary-color) 0% 30%,
+    var(--green-color) 30% 40%,
+    var(--blue-color) 40% 45%,
+    transparent 45% 85%,
+    var(--yellow-color) 85% 100%
+  );
+  transform: rotate(-15deg);
+}
 
 @layer utilities {
-
   @keyframes blink {
-    0%, 100% {
+    0%,
+    100% {
       opacity: 1;
     }
     50% {
@@ -24,7 +96,6 @@ html, body {
   .animate-blink {
     animation: blink 0.8s step-end infinite;
   }
-
 
   @keyframes loading {
     0% {
@@ -39,7 +110,6 @@ html, body {
 .animate-loading-bar {
   animation: loading 0.8s ease infinite;
 }
-
 
 .reveal {
   opacity: 0;
