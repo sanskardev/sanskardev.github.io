@@ -18,26 +18,25 @@ function App() {
     <>
       {!isLoaded && <LoadingScreen onComplete={() => setIsLoaded(true)} />}
       <div
-        className={`min-h-screen transition-opacity duration-700 ${
-          isLoaded ? "opacity-100" : "opacity-0"
-        } my-bg-white my-text-black`}
-      >
-        <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+        className={`min-h-screen absolute transition-opacity duration-700 ${
+          isLoaded ? "opacity-0" : "opacity-100"
+        }`}
+      ></div>
+      <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
 
-        <Router>
-          <Routes>
-            <Route element={<Layout />}>
-              <Route path="/" element={<Home />} />
-              <Route
-                path="/professional-experience"
-                element={<ProfessionalExperience />}
-              />
-              <Route path="creative-works" element={<CreativeWorks />} />
-              <Route path="contact-me" element={<Contact />} />
-            </Route>
-          </Routes>
-        </Router>
-      </div>
+      <Router>
+        <Routes>
+          <Route element={<Layout />}>
+            <Route path="/" element={<Home />} />
+            <Route
+              path="/professional-experience"
+              element={<ProfessionalExperience />}
+            />
+            <Route path="creative-works" element={<CreativeWorks />} />
+            <Route path="contact-me" element={<Contact />} />
+          </Route>
+        </Routes>
+      </Router>
     </>
   );
 }

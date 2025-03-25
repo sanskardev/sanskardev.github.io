@@ -2,6 +2,7 @@
 
 :root {
   --white-color: #fcf0f0;
+  --off-white-color: #fff8f8;
   --black-color: #343434;
   --primary-color: #ff554d;
   --yellow-color: #ffc74d;
@@ -14,15 +15,22 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Space Grotesk", sans-serif;
-  background: var(--white-color);
   color: var(--black-color);
+  background: var(--white-color);
+  background-image: url("./assets/home-bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  background-blend-mode: overlay;
 }
 
 .my-bg-primary {
   background-color: var(--primary-color);
 }
 
-.my-bg-primary\/10 {
+.my-bg-primary\/10,
+.hover\:my-bg-primary\/10:hover {
   background-color: #ff564d28;
 }
 
@@ -32,6 +40,14 @@ body {
 
 .my-bg-white {
   background-color: var(--white-color);
+}
+
+.my-bg-white\/10 {
+  background-color: #ffffffd0;
+}
+
+.my-bg-off-white {
+  background-color: var(--off-white-color);
 }
 
 .my-text-black {
@@ -44,6 +60,11 @@ body {
 
 .my-text-primary {
   color: var(--primary-color);
+}
+
+.hover\:my-text-primary:hover {
+  color: var(--primary-color);
+  transition-duration: 0.5s;
 }
 
 .my-border-black {
@@ -67,19 +88,132 @@ h1 {
   }
 }
 
+.my-pill {
+  @apply bg-blue-500/10
+  text-blue-500 
+  py-1 
+  px-3 
+  rounded-full 
+  text-sm 
+  hover:bg-blue-500/20 
+  hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] 
+  transition-all;
+  cursor: default;
+}
+
+.my-card {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  border: 1px solid var(--primary-color);
+  @apply backdrop-blur-sm;
+  animation: blur-animation 1s linear forwards;
+}
+
+@keyframes blur-animation {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px) opacity(0);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(10px) opacity(1);
+  }
+}
+
 .piechart {
-  /* width: 150px;
-  height: 150px; */
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 1/1;
+  position: relative;
   border-radius: 50%;
-  background: conic-gradient(
-    var(--primary-color) 0% 30%,
-    var(--green-color) 30% 40%,
-    var(--blue-color) 40% 45%,
-    transparent 45% 85%,
-    var(--yellow-color) 85% 100%
-  );
-  transform: rotate(-15deg);
+  overflow: hidden;
+}
+
+.slice {
+  aspect-ratio: 1/1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  clip-path: polygon(50% 50%, 100% 50%, 100% 0%, 50% 0%);
+  transform-origin: 50% 50%;
+  opacity: 0;
+}
+
+.slice1 {
+  background: var(--primary-color);
+  animation: grow1 0.5s ease-out forwards;
+}
+.slice2 {
+  background: var(--green-color);
+  animation: grow2 0.5s ease-out forwards;
+}
+.slice3 {
+  background: var(--blue-color);
+  animation: grow3 0.5s ease-out forwards;
+}
+.slice4 {
+  background: var(--yellow-color);
+  animation: grow4 0.5s ease-out forwards;
+}
+
+@keyframes grow1 {
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes grow2 {
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(20deg);
+    opacity: 1;
+  }
+}
+
+@keyframes grow3 {
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(60deg);
+    opacity: 1;
+  }
+}
+
+@keyframes grow4 {
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+  to {
+    transform: rotate(130deg);
+    opacity: 1;
+  }
+}
+
+.image-hue-animation {
+  animation: hue-rotating 5s linear infinite;
+}
+
+@keyframes hue-rotating {
+  0%,
+  100% {
+    /* transform: rotate(0); */
+    border: 0px solid var(--primary-color);
+    filter: hue-rotate(0);
+  }
+  50% {
+    /* transform: rotate(360deg); */
+    border: 5px solid var(--primary-color);
+    filter: hue-rotate(360deg);
+  }
 }
 
 @layer utilities {

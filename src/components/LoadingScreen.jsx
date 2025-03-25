@@ -1,40 +1,44 @@
 import { useEffect, useState } from "react";
 
+export const LoadingScreen = ({ onComplete }) => {
+  const [text, setText] = useState("");
+  const [isFading, setIsFading] = useState(false);
+  const fullText = "<Hello World />";
 
-export const LoadingScreen = ({onComplete}) => {
+  useEffect(() => {
+    let index = 0;
+    const interval = setInterval(() => {
+      setText(fullText.substring(0, index));
+      index++;
 
-    const [text, setText] = useState("");
-    const fullText = "<Hello World />";
+      if (index > fullText.length) {
+        clearInterval(interval);
 
-    useEffect(() => {
-        let index = 0;
-        const interval = setInterval(() => {
-            setText(fullText.substring(0, index));
-            index++;
+        setTimeout(() => {
+          setIsFading(true); // Start fade-out
+          setTimeout(() => {
+            onComplete();
+          }, 500); // Wait for fade-out animation to complete
+        }, 1000);
+      }
+    }, 100);
 
-            if (index > fullText.length) {
-                clearInterval(interval);    
+    return () => clearInterval(interval);
+  }, [onComplete]);
 
-                setTimeout(() => {
-                    onComplete();
-                }, 1000);
-            }
-        }, 100);
+  return (
+    <div
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center my-bg-white/10 backdrop-blur-xs transition-opacity duration-500 ${
+        isFading ? "opacity-0" : "opacity-100"
+      }`}
+    >
+      <div className="mb-4 text-4xl font-mono font-bold">
+        {text} <span className="animate-blink ml-1"> | </span>
+      </div>
 
-        return () => clearInterval(interval);
-    }, [onComplete]);
-
-    return (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center">
-            <div className="mb-4 text-4xl font-mono font-bold">
-                {text} <span className="animate-blink ml-1"> | </span>
-            </div>
-
-            <div className="w-[200px] h-[2px] rounded relative overflow-hidden">
-                <div className="w-[40%] h-full my-bg-primary shadow-[0_0_15px_#3b82f6] animate-loading-bar">
-                    {" "}
-                </div>
-            </div>
-        </div>
-    );
+      <div className="w-[200px] h-[2px] rounded relative overflow-hidden">
+        <div className="w-[40%] h-full my-bg-primary shadow-[0_0_15px_#3b82f6] animate-loading-bar"></div>
+      </div>
+    </div>
+  );
 };

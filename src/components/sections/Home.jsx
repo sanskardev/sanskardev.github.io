@@ -11,14 +11,25 @@ export const Home = () => {
       <RevealOnScroll>
         <div className="text-center z-10 px-20 grid md:grid-cols-2 grid-cols-1">
           <HomeContent />
-          <div className="flex justify-end">
+          <div className="flex justify-end translate-x-50">
             <img
               src={ProfileImage}
               alt="photo"
-              className="h-50 rounded-full object-scale-down md:translate-x-10 md:translate-y-10 sm:translate-y-20 sm:translate-x-20"
+              className="h-60 w-60 rounded-full object-scale-down translate-y-10 image-hue-animation"
             />
-            <div className="piechart w-25 h-25 md:-translate-x-10 md:translate-y-0 sm:translate-y-10"></div>
-            <div className="piechart w-35 h-35 rotate-120 md:-translate-x-47 md:translate-y-43 sm:-translate-x-38 sm:translate-y-54"></div>
+
+            <div class="piechart h-35 -translate-x-20 rotate-300">
+              <div class="slice slice1"></div>
+              <div class="slice slice2"></div>
+              <div class="slice slice3"></div>
+              <div class="slice slice4"></div>
+            </div>
+            <div class="piechart h-45 -translate-x-80 translate-y-52 rotate-60">
+              <div class="slice slice1"></div>
+              <div class="slice slice2"></div>
+              <div class="slice slice3"></div>
+              <div class="slice slice4"></div>
+            </div>
           </div>
         </div>
       </RevealOnScroll>

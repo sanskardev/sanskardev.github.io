@@ -1,27 +1,31 @@
 import { RevealOnScroll } from "../RevealOnScroll";
+import ResumeURL from "../../assets/Sanskar_Dikshit_Resume_2025.pdf";
 
 export const ProfessionalExperience = () => {
-  const dataEngineeringSkills = [
+  const programmingLanguageSkills = [
+    "SQL (Advanced)",
+    "CTEs",
+    "Window Functions",
+    "Indexing",
+    "Query Optimization",
     "Python",
-    "SQL",
-    "PySpark",
+    "Pyspark",
+  ];
+  const dataEngineeringSkills = [
+    "Extract Transform Load(ETL)",
+    "SQL Server Management Studio",
+    "Azure SQL Database",
     "Azure Data Factory",
-    "Databricks",
     "Azure Synapse Analytics",
     "Azure Data Lake Storage",
+    "Databricks",
     "Power BI",
+    "Data Warehouse",
     "Qlik CDC",
-    "ETL",
-    "Data Warehousing",
+    "Cloud Data Engineering",
   ];
 
-  const devOpsSkills = [
-    "Azure DevOps",
-    "Jira",
-    "Git",
-    "CI/CD",
-    "Agile Methodologies",
-  ];
+  const agileSkills = ["Azure DevOps", "Jira", "Git", "CI/CD"];
 
   return (
     <section
@@ -29,69 +33,84 @@ export const ProfessionalExperience = () => {
       className="min-h-screen flex items-center justify-center py-20"
     >
       <RevealOnScroll>
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="my-10 text-3xl font-bold bg-clip-text my-text-primary text-center">
-            Professional Experience
-          </h2>
+        <div className="max-w-3xl">
+          <div className="grid grid-cols-3">
+            <div className="my-card">
+              <a
+                target="_blank"
+                className="underline my-text-primary hover:text-blue-300 transition-colors"
+                href={ResumeURL}
+              >
+                Download Resume
+              </a>
 
-          <div className="rounded-xl p-8 border-black/30 border hover:-translate-y-1 transition-all bg-white/30">
-            <p className="my-text-black mb-6">
-              Data Engineer with expertise in building scalable data pipelines,
-              real-time CDC solutions, and cloud-based data architectures.
-              Passionate about transforming raw data into actionable insights.
-            </p>
+              <h2 className="text-2xl bg-clip-text my-text-black my-6">
+                Story Behind the Engineer
+              </h2>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
+              <p className="my-text-black">
+                My data engineering journey started at{" "}
+                <strong>Manipal University Jaipur</strong>, juggling code,
+                projects, and a bit of freelancing. After graduation, Bangalore
+                became home, and TEKsystems Global Services became the
+                playground. Now, with <strong>2.5 years of experience</strong>,
+                I spend my days building ETL pipelines, fixing messy datasets,
+                and making the most out of the quintessential corporate life.
+              </p>
+            </div>
+
+            <div className="my-card col-span-2">
+              <h2 className="text-2xl bg-clip-text my-text-black">🛠️ Skills</h2>
+
+              <div className="my-6 transition-all">
                 <h3 className="text-xl font-bold mb-4"> Data Engineering </h3>
                 <div className="flex flex-wrap gap-2">
                   {dataEngineeringSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="my-bg-primary/10 my-text-primary py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
-                    >
+                    <span key={key} className="my-pill">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
-                <h3 className="text-xl font-bold mb-4"> Project Management </h3>
+              <div className="my-6 transition-all">
+                <h3 className="text-xl font-bold mb-4">
+                  Programming Languages
+                </h3>
                 <div className="flex flex-wrap gap-2">
-                  {devOpsSkills.map((tech, key) => (
-                    <span
-                      key={key}
-                      className="my-bg-primary/10 my-text-primary py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                                    hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition"
-                    >
+                  {programmingLanguageSkills.map((tech, key) => (
+                    <span key={key} className="my-pill">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <div className="my-6 transition-all">
+                <h3 className="text-xl font-bold mb-4">Agile Methodologies</h3>
+                <div className="flex flex-wrap gap-2">
+                  {agileSkills.map((tech, key) => (
+                    <span key={key} className="my-pill">
                       {tech}
                     </span>
                   ))}
                 </div>
               </div>
             </div>
-          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
-            <div className="p-6 rounded-xl border-black/30 border hover:-translate-y-1 transition-all bg-white/30">
-              <h3 className="text-xl font-bold mb-4"> 🏫 Education </h3>
-              <ul className="list-disc list-inside my-text-black space-y-2">
-                <li>
-                  <strong> B.Tech in Computer Science </strong> - Manipal
-                  University Jaipur
-                </li>
-              </ul>
-            </div>
-            <div className="p-6 rounded-xl border-black/30 border hover:-translate-y-1 transition-all bg-white/30">
-              <h3 className="text-xl font-bold mb-4"> 💼 Work Experience </h3>
+            <div className="my-card col-span-3">
+              <h2 className="text-2xl bg-clip-text my-text-black">
+                {" "}
+                💼 Work Experience{" "}
+              </h2>
               <div className="space-y-4 my-text-black">
                 <div>
-                  <h4 className="font-semibold">
-                    Data Engineer at TEKsystems Global Services (Present)
-                  </h4>
-                  <p>
+                  <p className="my-text-black my-6">
+                    <strong>Data Engineer at TEKsystems Global Services</strong>
+                    <span className="float-right">
+                      [September 2022 - Present]
+                    </span>
+                    <br />
                     Built and deployed 30+ ETL pipelines in Azure, handling
                     complex workflows like SCD Type 1 & Type 2, processing 30M+
                     rows from multiple sources, and integrating real-time CDC
@@ -99,10 +118,14 @@ export const ProfessionalExperience = () => {
                   </p>
                 </div>
                 <div>
-                  <h4 className="font-semibold">
-                    Data Engineer Intern at TEKsystems Global Services
-                  </h4>
-                  <p>
+                  <p className="my-text-black my-6">
+                    <strong>
+                      Data Engineer Internship at TEKsystems Global Services
+                    </strong>
+                    <span className="float-right">
+                      [Februrary 2022 - September 2022]
+                    </span>
+                    <br />
                     Developed an ETL solution using Talend, Python, and
                     SharePoint; automated skill extraction from PPT files with
                     NLP, achieving 96% accuracy.
@@ -110,51 +133,48 @@ export const ProfessionalExperience = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
 
-        <div className="max-w-3xl mx-auto px-4">
-          <h2 className="text-3xl font-bold my-20 mb-8 bg-clip-text my-text-primary text-center">
-            Featured Projects
-          </h2>
+            <div className="my-card col-span-3">
+              <h2 className="text-2xl bg-clip-text my-text-black">
+                📊 Personal Projects
+              </h2>
 
-          <div className="p-6 bg-white/30 rounded-xl border border-black/30 hover:-translate-y-1 hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition">
-            <h3 className="text-xl font-bold mb-2">
-              Lok Sabha Attendance Dashboard
-            </h3>
-            <p className="my-text-black mb-4">
-              Built an end-to-end ETL pipeline to analyze Lok Sabha MPs'
-              attendance data. The pipeline extracts daily attendance records
-              from the sansad.in REST API, processes and consolidates 1700+ CSV
-              files into a single Parquet file using Databricks PySpark, and
-              visualizes insights through an interactive Power BI dashboard.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-4">
-              {[
-                "Azure Data Factory",
-                "Azure Databricks",
-                "PySpark",
-                "Power BI",
-                "Azure Data Lake Storage",
-                "REST API",
-              ].map((tech, key) => (
-                <span
-                  key={key}
-                  className="bg-blue-500/10 text-blue-500 py-1 px-3 rounded-full text-sm hover:bg-blue-500/20 
-                              hover:shadow-[0_2px_8px_rgba(59,130,246,0.2)] transition-all"
+              <div className="my-card">
+                <p className="text-xl">
+                  Scalable ETL Pipeline & BI Dashboard for Lok Sabha Attendance
+                  Analysis
+                </p>
+                <br />
+                <p className="my-text-black">
+                  Built an end-to-end ETL pipeline to analyze Lok Sabha MPs'
+                  attendance data. The pipeline extracts daily attendance
+                  records from the sansad.in REST API, processes and
+                  consolidates 1700+ CSV files into a single Parquet file using
+                  Databricks PySpark, and visualizes insights through an
+                  interactive Power BI dashboard.
+                </p>
+                <div className="flex flex-wrap gap-2 my-4">
+                  {[
+                    "Azure Data Factory",
+                    "Azure Databricks",
+                    "PySpark",
+                    "Power BI",
+                    "Azure Data Lake Storage",
+                    "REST API",
+                  ].map((tech, key) => (
+                    <span key={key} className="my-pill">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  target="_blank"
+                  href="https://github.com/sanskardev/Loksabha-Attendance-Analysis"
+                  className="text-blue-400 hover:text-blue-300 transition-colors my-4"
                 >
-                  {tech}
-                </span>
-              ))}
-            </div>
-
-            <div className="flex justify-between items-center">
-              <a
-                href="#"
-                className="text-blue-400 hover:text-blue-300 transition-colors my-4"
-              >
-                View Project →
-              </a>
+                  View on GitHub →
+                </a>
+              </div>
             </div>
           </div>
         </div>
