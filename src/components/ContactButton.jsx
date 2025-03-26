@@ -5,9 +5,9 @@ export const ContactButton = () => {
     <>
       <Link
         to="/contact-me"
-        className="my-bg-primary text-white py-3 px-6 rounded-full font-medium transition relative overlow-hidden hover:-translate-y-0.5 hover:shadow-[0_0_50px_#ff554d]"
+        className="my-bg-primary text-white py-3 px-6 font-medium transition relative overlow-hidden hover:my-glow-primary"
       >
-        Connect With Me
+        Connect
       </Link>
     </>
   );

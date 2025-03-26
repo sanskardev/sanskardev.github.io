@@ -34,21 +34,21 @@ export const ProfessionalExperience = () => {
     >
       <RevealOnScroll>
         <div className="max-w-3xl">
-          <div className="grid grid-cols-3">
-            <div className="my-card">
+          <div className="grid grid-cols-3 gap-4">
+            <div className="my-card p-4">
               <a
                 target="_blank"
-                className="underline my-text-primary hover:text-blue-300 transition-colors"
+                className="my-underline-primary my-text-primary hover:text-white transition-all"
                 href={ResumeURL}
               >
                 Download Resume
               </a>
 
-              <h2 className="text-2xl bg-clip-text my-text-black my-6">
+              <h2 className="my-underline-primary text-2xl my-6">
                 Story Behind the Engineer
               </h2>
 
-              <p className="my-text-black">
+              <p className="">
                 My data engineering journey started at{" "}
                 <strong>Manipal University Jaipur</strong>, juggling code,
                 projects, and a bit of freelancing. After graduation, Bangalore
@@ -59,8 +59,10 @@ export const ProfessionalExperience = () => {
               </p>
             </div>
 
-            <div className="my-card col-span-2">
-              <h2 className="text-2xl bg-clip-text my-text-black">🛠️ Skills</h2>
+            <div className="my-card p-4 col-span-2">
+              <h2 className="text-2xl ">
+                🛠️ <span className="my-underline-primary">Skills</span>
+              </h2>
 
               <div className="my-6 transition-all">
                 <h3 className="text-xl font-bold mb-4"> Data Engineering </h3>
@@ -98,14 +100,16 @@ export const ProfessionalExperience = () => {
               </div>
             </div>
 
-            <div className="my-card col-span-3">
-              <h2 className="text-2xl bg-clip-text my-text-black">
+            <div className="my-card p-4 col-span-3">
+              <h2 className="text-2xl ">
                 {" "}
-                💼 Work Experience{" "}
+                💼 <span className="my-underline-primary">
+                  Work Experience
+                </span>{" "}
               </h2>
-              <div className="space-y-4 my-text-black">
+              <div className="space-y-4 ">
                 <div>
-                  <p className="my-text-black my-6">
+                  <p className=" my-6">
                     <strong>Data Engineer at TEKsystems Global Services</strong>
                     <span className="float-right">
                       [September 2022 - Present]
@@ -118,7 +122,7 @@ export const ProfessionalExperience = () => {
                   </p>
                 </div>
                 <div>
-                  <p className="my-text-black my-6">
+                  <p className=" my-6">
                     <strong>
                       Data Engineer Internship at TEKsystems Global Services
                     </strong>
@@ -134,18 +138,19 @@ export const ProfessionalExperience = () => {
               </div>
             </div>
 
-            <div className="my-card col-span-3">
-              <h2 className="text-2xl bg-clip-text my-text-black">
-                📊 Personal Projects
+            <div className="my-card p-4 col-span-3">
+              <h2 className="text-2xl  mb-6">
+                📊{" "}
+                <span className="my-underline-primary">Personal Projects</span>
               </h2>
 
-              <div className="my-card">
+              <div className="my-card p-4">
                 <p className="text-xl">
                   Scalable ETL Pipeline & BI Dashboard for Lok Sabha Attendance
                   Analysis
                 </p>
                 <br />
-                <p className="my-text-black">
+                <p className="">
                   Built an end-to-end ETL pipeline to analyze Lok Sabha MPs'
                   attendance data. The pipeline extracts daily attendance
                   records from the sansad.in REST API, processes and

@@ -1,5 +1,5 @@
 import { RevealOnScroll } from "../RevealOnScroll";
-import { HomeContent } from "./HomeContent";
+import { HomeContent } from "../HomeContent";
 import ProfileImage from "../../assets/profile image.jpg";
 
 export const Home = () => {
@@ -15,16 +15,16 @@ export const Home = () => {
             <img
               src={ProfileImage}
               alt="photo"
-              className="h-60 w-60 rounded-full object-scale-down translate-y-10 image-hue-animation"
+              className="z-20 h-60 w-60 rounded-full object-scale-down translate-y-10 grayscale-80 border-white border-5"
             />
 
-            <div class="piechart h-35 -translate-x-20 rotate-300">
+            <div class="piechart h-35 -translate-x-20 rotate-300 my-glow-animation">
               <div class="slice slice1"></div>
               <div class="slice slice2"></div>
               <div class="slice slice3"></div>
               <div class="slice slice4"></div>
             </div>
-            <div class="piechart h-45 -translate-x-80 translate-y-52 rotate-60">
+            <div class="piechart h-45 -translate-x-80 translate-y-52 rotate-60 my-glow-animation">
               <div class="slice slice1"></div>
               <div class="slice slice2"></div>
               <div class="slice slice3"></div>

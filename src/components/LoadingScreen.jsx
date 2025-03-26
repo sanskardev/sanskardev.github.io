@@ -28,7 +28,7 @@ export const LoadingScreen = ({ onComplete }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center my-bg-white/10 backdrop-blur-xs transition-opacity duration-500 ${
+      className={`fixed inset-0 z-50 flex flex-col items-center justify-center backdrop-blur-xl transition-opacity duration-500 ${
         isFading ? "opacity-0" : "opacity-100"
       }`}
     >

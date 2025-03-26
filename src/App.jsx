@@ -4,10 +4,10 @@ import { useState } from "react";
 import { LoadingScreen } from "./components/LoadingScreen";
 import { Navbar } from "./components/Navbar";
 import { MobileMenu } from "./components/MobileMenu";
-import { Home } from "./components/sections/Home";
-import { ProfessionalExperience } from "./components/sections/ProfessionalExperience";
-import { CreativeWorks } from "./components/sections/CreativeWorks";
-import { Contact } from "./components/sections/Contact";
+import { Home } from "./components/pages/Home";
+import { ProfessionalExperience } from "./components/pages/ProfessionalExperience";
+import { CreativeWorks } from "./components/pages/CreativeWorks";
+import { Contact } from "./components/pages/Contact";
 import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./Layout.jsx";
 
