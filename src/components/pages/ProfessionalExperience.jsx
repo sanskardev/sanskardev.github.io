@@ -38,7 +38,7 @@ export const ProfessionalExperience = () => {
             <div className="my-card p-4">
               <a
                 target="_blank"
-                className="my-underline-primary my-text-primary hover:text-white transition-all"
+                className="my-underline-primary my-text-primary hover:my-text-white transition-all"
                 href={ResumeURL}
               >
                 Download Resume

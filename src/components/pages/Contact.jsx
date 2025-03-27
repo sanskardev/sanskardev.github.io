@@ -4,8 +4,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 export const Contact = () => {
-  // const element = <FontAwesomeIcon icon={faEnvelope} />;
-
   return (
     <section
       id="contact"
@@ -15,8 +13,6 @@ export const Contact = () => {
         <div className="grid grid-cols-2 max-w-3xl gap-4">
           <div className="my-card p-6">
             <h2 className="my-underline-primary text-2xl my-6">Get In Touch</h2>
-            {/* Find me on <FontAwesomeIcon icon={faLinkedin} size="xl" bounce />{" "}
-          <FontAwesomeIcon icon={faGithub} size="xl" /> */}
 
             <p>
               Whether you have a project idea, want to discuss data engineering,

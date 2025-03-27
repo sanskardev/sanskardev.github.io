@@ -4,27 +4,30 @@ import { ContactButton } from "./ContactButton";
 
 export const HomeContent = () => {
   return (
-    <div>
-      <div className="ml-auto my-bg-primary w-10 h-2 my-glow-primary"></div>
+    <div className="container">
+      <div className="relative w-auto h-2">
+        <div className="ml-auto my-bg-primary w-16 h-2 my-glow-primary line-animate"></div>
+      </div>
       <h1 className="text-right px-10">
         Hi, I'm <span className="font-bold">Sanskar.</span>
       </h1>
 
-      <p className="text-2xl/10 min-w-100 mx-auto my-10 text-right line">
+      <p className="text-2xl/10 min-w-100 mx-auto my-10 text-right">
         No{" "}
         <Link
           to="/professional-experience"
           className="hover:my-text-primary border my-border-primary"
         >
-          /*Data Engineer*/
+          Data Engineer
         </Link>{" "}
-        really <i>needs</i> a website <br /> but hey, weekends are for{" "}
+        really <i>needs</i> a website, <br /> but hey, weekends are for{" "}
         <Link
           to="/creative-works"
           className="border my-border-primary hover:my-text-primary"
         >
-          /*fun projects!*/
-        </Link>{" "}
+          fun projects
+        </Link>
+        !
       </p>
 
       <div className="flex justify-end space-x-4 my-10 ">

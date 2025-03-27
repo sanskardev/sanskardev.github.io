@@ -15,7 +15,7 @@ export const Home = () => {
             <img
               src={ProfileImage}
               alt="photo"
-              className="z-20 h-60 w-60 rounded-full object-scale-down translate-y-10 grayscale-80 border-white border-5"
+              className="z-20 h-60 w-60 rounded-full object-scale-down translate-y-10 rotate-10 border-white border-5"
             />
 
             <div class="piechart h-35 -translate-x-20 rotate-300 my-glow-animation">
