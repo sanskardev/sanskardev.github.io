@@ -72,103 +72,104 @@ export const CreativeWorks = () => {
           " top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         }`}
       >
-        <div className="p-6">
-          <p className="text-2xl/10 min-w-100 mx-auto my-10 transition-all">
-            Just like this website, which came to life during an especially dull
-            weekend, I've spent other weekends working on projects like a{" "}
-            <span
-              className="hover:my-text-primary border my-border-primary cursor-pointer"
-              onClick={() => {
-                setisSelectedBlog(!isSelectedBlog);
-              }}
-            >
-              blog
-            </span>{" "}
-            and a{" "}
-            <span
-              className="hover:my-text-primary border my-border-primary cursor-pointer"
-              onClick={() => {
-                setisSelectedYT(!isSelectedYT);
-              }}
-            >
-              YouTube channel
-            </span>
-            .
-          </p>
-        </div>
-        <div
-          className={`grid grid-cols-2 gap-4 ${
-            !isSelectedBlog && !isSelectedYT && "hidden"
-          }`}
-        >
+        <RevealOnScroll>
+          <div className="p-6">
+            <p className="text-2xl/10 min-w-100 mx-auto my-10 transition-all">
+              Just like this website, which came to life during an especially
+              dull weekend, I've spent other weekends working on projects like a{" "}
+              <span
+                className="click-animation hover:my-text-primary border my-border-primary cursor-pointer"
+                onClick={() => {
+                  setisSelectedBlog(!isSelectedBlog);
+                }}
+              >
+                blog
+              </span>{" "}
+              and a{" "}
+              <span
+                className="click-animation hover:my-text-primary border my-border-primary cursor-pointer"
+                onClick={() => {
+                  setisSelectedYT(!isSelectedYT);
+                }}
+              >
+                YouTube channel
+              </span>
+              .
+            </p>
+          </div>
           <div
-            className={`transition-opacity duration-500 ${
-              !isSelectedBlog && "opacity-0"
+            className={`grid grid-cols-2 gap-4 ${
+              !isSelectedBlog && !isSelectedYT && "hidden"
             }`}
           >
-            <p className="text-2xl/10 min-w-100 mx-auto my-2">
-              Visit{" "}
-              <a
-                target="_blank"
-                href="https://isanskari.home.blog/"
-                class="my-underline-primary hover:my-text-primary"
-              >
-                isanskari.home.blog/
-              </a>{" "}
-              <p class="text-lg">*featured blog posts*</p>
-            </p>
-            {blogPostList.map((item, key) => (
-              <div key={key} className={"my-card p-6"}>
-                <span className="my-pill">{item.type}</span>
-                <div className="my-card my-4 p-2">
-                  <h3 className="text-xl my-4">{item.title}</h3>
-                  {item.content}
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    className="block my-3 my-text-primary hover:my-text-white transition-colors"
-                  >
-                    Go to post →
-                  </a>
+            <div
+              className={`transition-opacity duration-500 ${
+                !isSelectedBlog && "opacity-0"
+              }`}
+            >
+              <p className="text-2xl/10 min-w-100 mx-auto my-2">
+                Visit{" "}
+                <a
+                  target="_blank"
+                  href="https://isanskari.home.blog/"
+                  class="my-underline-primary hover:my-text-primary"
+                >
+                  isanskari.home.blog/
+                </a>{" "}
+                <p class="text-lg">*featured blog posts*</p>
+              </p>
+              {blogPostList.map((item, key) => (
+                <div key={key} className={"my-card p-6"}>
+                  <span className="my-pill">{item.type}</span>
+                  <div className="my-card my-4 p-2">
+                    <h3 className="text-xl my-4">{item.title}</h3>
+                    {item.content}
+                    <a
+                      href={item.url}
+                      target="_blank"
+                      className="block my-3 my-text-primary hover:my-text-white transition-colors"
+                    >
+                      Go to post →
+                    </a>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
 
-          <div
-            className={`transition-opacity duration-500 ${
-              !isSelectedYT && "opacity-0"
-            }`}
-          >
-            <p className="text-2xl/10 min-w-100 mx-auto my-2">
-              Visit{" "}
-              <a
-                target="_blank"
-                href="https://www.youtube.com/@isanskari"
-                class="my-underline-primary hover:my-text-primary"
-              >
-                youtube.com/@isanskari
-              </a>{" "}
-              <p class="text-lg">*featured youtube videos*</p>
-            </p>
-            {ytVideoList.map((item, key) => (
-              <div key={key} className={"my-card p-6"}>
-                <span className="my-pill">{item.type}</span>
-                <YouTube
-                  className={"my-6"}
-                  videoId={item.id}
-                  opts={ytOptions}
-                  onReady={(event) => {
-                    event.target.pauseVideo();
-                  }}
-                />
-                <h3 className="text-xl">{item.title}</h3>
-              </div>
-            ))}
+            <div
+              className={`transition-opacity duration-500 ${
+                !isSelectedYT && "opacity-0"
+              }`}
+            >
+              <p className="text-2xl/10 min-w-100 mx-auto my-2">
+                Visit{" "}
+                <a
+                  target="_blank"
+                  href="https://www.youtube.com/@isanskari"
+                  class="my-underline-primary hover:my-text-primary"
+                >
+                  youtube.com/@isanskari
+                </a>{" "}
+                <p class="text-lg">*featured youtube videos*</p>
+              </p>
+              {ytVideoList.map((item, key) => (
+                <div key={key} className={"my-card p-6"}>
+                  <span className="my-pill">{item.type}</span>
+                  <YouTube
+                    className={"my-6"}
+                    videoId={item.id}
+                    opts={ytOptions}
+                    onReady={(event) => {
+                      event.target.pauseVideo();
+                    }}
+                  />
+                  <h3 className="text-xl">{item.title}</h3>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
+        </RevealOnScroll>
       </div>
-      <RevealOnScroll></RevealOnScroll>
     </section>
   );
 };

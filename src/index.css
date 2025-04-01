@@ -120,20 +120,10 @@ h1 {
   right: 0;
   content: "";
   transition: width ease 0.5s;
-  /* animation: line-animation 0.5s linear forwards; */
 }
 
 .line-animate:hover:after {
   width: 4rem;
-}
-
-@keyframes line-animation {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 2.5rem;
-  }
 }
 
 .my-form {
@@ -190,6 +180,7 @@ h1 {
   position: relative;
   border-radius: 50%;
   overflow: hidden;
+  background-color: rgb(53, 3, 0);
 }
 
 .slice {
@@ -204,19 +195,19 @@ h1 {
 }
 
 .slice1 {
-  background: var(--yellow-color);
+  background: rgb(255, 148, 143);
   animation: grow1 0.5s ease-out forwards;
 }
 .slice2 {
-  background: var(--green-color);
+  background: var(--primary-color);
   animation: grow2 0.5s ease-out forwards;
 }
 .slice3 {
-  background: var(--blue-color);
+  background: rgb(108, 14, 9);
   animation: grow3 0.5s ease-out forwards;
 }
 .slice4 {
-  background: var(--primary-color);
+  background: rgb(68, 7, 3);
   animation: grow4 0.5s ease-out forwards;
 }
 
@@ -321,4 +312,18 @@ h1 {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.click-animation {
+  font-size: 2rem;
+}
+
+@keyframes click-text {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 100;
+  }
 }
